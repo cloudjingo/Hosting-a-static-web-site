@@ -110,7 +110,25 @@ systemctl start httpd
 * **Security** – Private subnet deployment with NAT Gateway, security groups, and encrypted traffic.
 * **Version Control** – Web content is pulled directly from GitHub.
 
-## 📎 Reference
+## 🧹 Cleanup
 
-You can view the reference architecture diagram and scripts in the [project repository](https://github.com/cloudjingo/Hosting-a-static-web-site).
+To avoid unexpected charges, delete the following resources in this order:
+
+Auto Scaling Group (and associated Launch Configurations)
+
+Application Load Balancer (Listeners, Target Groups)
+
+EC2 Instances (if any remain)
+
+NAT Gateway and Elastic IP
+
+Internet Gateway
+
+VPC and Subnets
+
+ACM Certificate (optional)
+
+Route 53 Hosted Zone (optional)
+
+SNS Topic
 
